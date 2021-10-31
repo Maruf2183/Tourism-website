@@ -8,6 +8,9 @@ import Footer from './Components/Footer/Footer';
 import NotFound from './Components/NotFound/NotFound';
 import AuthProvider from './ContexAPI/AuthProvider';
 import Signin from './Components/Signin/Signin';
+import Register from './Components/Register/Register';
+import Profile from './Components/UserProfile/Profile';
+import ManageOrder from './Components/ManageOrder/ManageOrder';
 
 
 
@@ -16,35 +19,46 @@ function App() {
     <div className="App">
       <AuthProvider>
         <Router>
+        <Navber></Navber>
           <Switch>
 
-
             <Route exact path='/'>
-              <Navber></Navber>
               <Home></Home>
-              <Footer></Footer>
             </Route>
 
 
             <Route exact path='/home'>
-              <Navber></Navber>
               <Home></Home>
-              <Footer></Footer>
             </Route>
-
-
+             
 
             <Route path='/addingservice'>
-              <Navber></Navber>
               <AddingService></AddingService>
-              <Footer></Footer>
             </Route>
+              
 
             <Route path='/signin'>
-             <Navber></Navber>
               <Signin></Signin>
             </Route>
+             
 
+              
+            <Route exact path='/home/:id'>
+              <Register></Register>
+            </Route>
+             
+
+            <Route path='/profile'>
+              <Profile></Profile>
+            </Route>
+            <Route path='manageorder'>
+              <ManageOrder></ManageOrder>
+              </Route>
+
+
+             
+             
+              
 
 
 
@@ -52,8 +66,11 @@ function App() {
               <NotFound></NotFound>
             </Route>
 
+
+
           </Switch>
         </Router>
+        <Footer></Footer>
       </AuthProvider>
     </div>
   );

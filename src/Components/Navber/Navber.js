@@ -11,8 +11,8 @@ import useAuth from '../../Hook/useAuth';
 
 const navigation = [
   { name: 'HOME', href: '/home', current: true },
-  { name: 'Add service', href: '/addingservice', current: false },
-  { name: 'Manage Service', href: '/manageservice', current: false },
+  { name: 'Add  a new  service', href: '/addingservice', current: false },
+  { name: 'Manage All Order', href: '/manageorder', current: false },
   { name: 'about us', href: '/about', current: false },
 ]
 
@@ -23,10 +23,10 @@ function classNames(...classes) {
 const Navber = () => {
   
   const { logOut, user } = useAuth();
-  console.log(user);
+  
  
   return (
-    <Disclosure as="nav" className="bg-gray-500 ">
+    <Disclosure as="nav" className="bg-gray-500  no-underline">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -44,32 +44,33 @@ const Navber = () => {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <h2 className='hidden lg:block h-8 w-auto  text-blue-700 header-text font-iris'>Haven Holidays</h2>
+                  {/* <NavLink to='/home' className='hidden hidden sm:hidden lg:block lg:h-auto lg:w-auto  lg:text-black  lg:font-iris lg:text-4xl no-underline lg:p-5'>Haven Holidays</NavLink> */}
                   
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <NavLink
-                        key={item.name}
-                        to={item.href}
-                        className={classNames(
-                          item.current ? 'bg-gray-700 text-white no-underline ' : 'text-gray-300 hover:bg-gray-700 hover:text-white no-underline',
-                          'px-3 py-2 rounded-md text-sm font-medium'
-                        )}
-                      /*   aria-current={item.current ? 'page' : undefined} */
-                      >
-                        {item.name}
-                      </NavLink>
-                      
-                    ))}
+
+
+                    <NavLink className='px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white no-underline' to='/home'>HOME</NavLink>
+                    <NavLink className='px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white no-underline' to='/addingservice'>ADD SERViCE</NavLink>
+                    <NavLink className='px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white no-underline' to='/manageorder'>Manage Orders</NavLink>
+                    <NavLink className='px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white no-underline' to='/about'>About Us</NavLink>
+                    
+
+
+                  
+
+
+
+
+
                     
                   </div>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               
-              {user?.displayName?<h2 className='text-sm text-white'>{user.displayName}</h2>:<></>}
+              {user?.displayName?<h1 className='text-sm text-white'>{user.displayName}</h1>:<></>}
 
                 {/* Profile dropdown */}
                 {user?.email ? <Menu as="div" className="ml-3 relative">
@@ -97,7 +98,7 @@ const Navber = () => {
                       <Menu.Item>
                         {({ active }) => (
                           <NavLink
-                            to="https://www.facebook.com/"
+                            to="/profile"
                             className={classNames(active ? 'bg-gray-100 no-underline' : '', 'block px-4 py-2 text-sm text-gray-700 no-underline')}
                           >
                             Your Profile
@@ -154,3 +155,10 @@ const Navber = () => {
 };
 
 export default Navber;
+
+
+
+
+
+
+/*  */
