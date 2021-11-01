@@ -2,7 +2,8 @@
 import axios from 'axios';
 import React, { useEffect, useState, } from 'react';
 import useAuth from '../../Hook/useAuth';
-
+import '../Profiledata/Profiledata'
+import Profiledata from '../Profiledata/Profiledata';
 
 const Profile = () => {
     const { user, isloading } = useAuth();
@@ -23,7 +24,11 @@ const Profile = () => {
 
 
 
-
+    if (isloading) {
+        return (
+        <h2>this page is loading please wait</h2>
+    )
+}
 
 
 
@@ -43,7 +48,12 @@ const Profile = () => {
 
                     <h2>order history</h2>
                     {
-                       bookedData.map(data=>console.log(data))
+                        bookedData.map(data=> <Profiledata
+
+                            key={bookedData._id}
+                            data={data}
+                        
+                        ></Profiledata>)
 
 
                         
