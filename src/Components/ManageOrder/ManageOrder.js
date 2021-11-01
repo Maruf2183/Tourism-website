@@ -6,7 +6,7 @@ const ManageOrder = () => {
     const [bookings, setBookings] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/booking').then(data => setBookings(data.data));
+        axios.get('https://quiet-hamlet-08225.herokuapp.com/booking').then(data => setBookings(data.data));
     }, []);
     console.log(bookings);
 

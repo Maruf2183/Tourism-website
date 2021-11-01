@@ -16,17 +16,12 @@ const useFirebase = () => {
     const googleProvider = new GoogleAuthProvider();
 
     const signInWithgoogle = () => {
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                setUser(result.user)
-                
-            })
-
-            .catch(error => setError(error.message))
-            .finally(() => {
-            setIsloading(false)
-        })
+        return signInWithPopup(auth, googleProvider)
     }
+         
+           
+
+        
 
 
     const signUpWithEmail = (email, password) => {
@@ -65,13 +60,14 @@ const useFirebase = () => {
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if (user) {
-                console.log('inside state change', user);
                 setUser(user);
+                setIsloading(false)
+                
             }
             else {
                 setUser({})
             }
-            setIsloading(false)
+           
         })
     }, []);
 

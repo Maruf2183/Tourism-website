@@ -9,7 +9,7 @@ const Services = () => {
     
 
     useEffect(() => {
-        fetch('http://localhost:5000/services').then(res => res.json()).then(data => {
+        fetch('https://quiet-hamlet-08225.herokuapp.com/services').then(res => res.json()).then(data => {
 
             setDatas(data)
             setLoading(false)

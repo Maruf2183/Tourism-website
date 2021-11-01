@@ -1,9 +1,24 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink,useLocation,useHistory } from 'react-router-dom';
 import useAuth from '../../Hook/useAuth'; 
 
 const Signin = () => {
-    const {signInWithgoogle}=useAuth()
+    const { signInWithgoogle } = useAuth()
+
+    const location = useLocation();
+    const history=useHistory()
+    const currentstate = location.state?.from.pathname||"/home";
+    console.log(currentstate);
+
+    const login = () => {
+        signInWithgoogle().then(result => {
+            console.log(result.user);
+            history.push(currentstate)
+
+        
+    })
+}
+
     
     return (
         <section className="min-h-screen flex items-stretch text-white ">
@@ -36,7 +51,7 @@ const Signin = () => {
                 <p className='text-4xl' >Please sign in </p>
                 <div className="py-6 space-x-8">
                     <span className="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">f</span>
-                    <button onClick={signInWithgoogle}  className="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white shadow-2x1">G+</button>
+                    <button onClick={login}  className="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white shadow-2x1">G+</button>
                     <span className="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">in</span>
                 </div>
                 <p className="text-gray-100">

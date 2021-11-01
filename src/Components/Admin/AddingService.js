@@ -7,7 +7,7 @@ const AddingService = () => {
 
     const onSubmit = (data) => {
         console.log(data);
-        axios.post('http://localhost:5000/services', data).then(result => console.log(result));
+        axios.post('https://quiet-hamlet-08225.herokuapp.com/services', data).then(result => console.log(result));
     }
 
 

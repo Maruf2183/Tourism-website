@@ -9,7 +9,7 @@ const Register = () => {
     const { user } = useAuth();
     const email = user.email;
     const { id } = useParams();
-    const url = `http://localhost:5000/services/${id}`;
+    const url = `https://quiet-hamlet-08225.herokuapp.com/services/${id}`;
     const [select, setSelect] = useState({});
 
     const [error, setError] = useState('')
@@ -33,7 +33,7 @@ const Register = () => {
         data.status = 'Pending'
         
 
-        axios.post('http://localhost:5000/booking', data)
+        axios.post('https://quiet-hamlet-08225.herokuapp.com/booking', data)
         history.push("/profile")
 
     }

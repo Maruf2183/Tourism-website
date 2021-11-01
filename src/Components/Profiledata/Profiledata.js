@@ -5,7 +5,7 @@ const Profiledata = ({ data }) => {
     const { Name, serviceID, city, address, phone, status,_id} = data;
 
 
-    const url = `http://localhost:5000/services/${serviceID}`;
+    const url = `https://quiet-hamlet-08225.herokuapp.com/services/${serviceID}`;
 
     const [destination, setDestination] = useState({});
 
@@ -22,7 +22,7 @@ const Profiledata = ({ data }) => {
     const { image, tittle, price, } = destination;
     
 
-    const deleteURL=`http://localhost:5000/booking/${_id}`
+    const deleteURL=`https://quiet-hamlet-08225.herokuapp.com/booking/${_id}`
 
     const handleDelete = () => {
         console.log('delete clicked');

@@ -11,6 +11,7 @@ import Signin from './Components/Signin/Signin';
 import Register from './Components/Register/Register';
 import Profile from './Components/UserProfile/Profile';
 import ManageOrder from './Components/ManageOrder/ManageOrder';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 
 
@@ -32,9 +33,9 @@ function App() {
             </Route>
              
 
-            <Route path='/addingservice'>
+            <PrivateRoute path='/addingservice'>
               <AddingService></AddingService>
-            </Route>
+            </PrivateRoute>
               
 
             <Route path='/signin'>
@@ -43,17 +44,17 @@ function App() {
              
 
               
-            <Route exact path='/home/:id'>
+            <PrivateRoute exact path='/home/:id'>
               <Register></Register>
-            </Route>
+            </PrivateRoute>
              
 
             <Route path='/profile'>
               <Profile></Profile>
             </Route>
-            <Route path='/manageorder'>
+            <PrivateRoute path='/manageorder'>
               <ManageOrder></ManageOrder>
-              </Route>
+              </PrivateRoute>
 
 
              

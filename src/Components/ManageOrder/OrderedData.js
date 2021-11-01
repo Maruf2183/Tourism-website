@@ -4,7 +4,7 @@ import React from 'react';
 const OrderedData = ({ data }) => {
     const { Name, address, phone, city, productId,_id} = data;
     
-   const deleteURL=`http://localhost:5000/booking/${_id}`
+   const deleteURL=`https://quiet-hamlet-08225.herokuapp.com/booking/${_id}`
 
     const handleDelete = () => {
         console.log('delete clicked');

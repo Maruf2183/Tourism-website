@@ -12,7 +12,7 @@ const Profile = () => {
 
     const { displayName, photoURL } = user;
     
-    const dynamicUrl = `http://localhost:5000/booking?email=${email}`
+    const dynamicUrl = `https://quiet-hamlet-08225.herokuapp.com/booking?email=${email}`
 
     useEffect(() => {
         if (!isloading) {
