@@ -54,7 +54,7 @@ const Navber = () => {
                     <NavLink className='px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white no-underline' to='/home'>HOME</NavLink>
                     <NavLink className='px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white no-underline' to='/addingservice'>ADD SERViCE</NavLink>
                     <NavLink className='px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white no-underline' to='/manageorder'>Manage Orders</NavLink>
-                    <NavLink className='px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white no-underline' to='/about'>About Us</NavLink>
+                    <NavLink className='px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white no-underline' to='/about*'>About Us</NavLink>
                     
 
 

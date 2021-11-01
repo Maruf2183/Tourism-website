@@ -34,8 +34,8 @@ const Service = ({ datais }) => {
                 <p className=" text-white  mb-1 max-w-xs	">{tittle}</p>
                 <h4 className="">{price} <span>$</span> </h4>
                 <p>{location}</p>
-                <p>{type}</p>
                 <p>{highlights}</p>
+                <p>{type}</p>
                 <button type='submit' onClick={(event)=>handleClick(event)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     Book Now
                 </button>
