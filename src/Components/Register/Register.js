@@ -18,7 +18,7 @@ const Register = () => {
         axios.get(url).then(data => setSelect(data.data)).catch(error => setError(error));
 
     }, [url])
-    const { tittle, image, location, type, highlights, price } = select;
+    const { tittle, image, location, type, highlights,} = select;
     console.log(error);
     console.log(select);
 
@@ -30,7 +30,8 @@ const Register = () => {
 
     const onSubmit = data => {
         data.serviceID = id
-        data.status = 'pending'
+        data.status = 'Pending'
+        
 
         axios.post('http://localhost:5000/booking', data)
         history.push("/profile")
@@ -57,7 +58,7 @@ const Register = () => {
                     </div>
                     <div className="text-center  text-xs  w-full p-4 h-full px-2 lg:w-2/4 lg:h-full overflow-hidden lg:text-sm bg-blue-300 lg:mx-4">
                         <p className=" text-white  mb-1 max-w-xs	">{tittle}</p>
-                        <h4 className="">{price} <span>$</span> </h4>
+                        <h4 className=""><span>$</span> </h4>
                         <p>{location}</p>
                         <p>{type}</p>
                         <p>{highlights}</p>

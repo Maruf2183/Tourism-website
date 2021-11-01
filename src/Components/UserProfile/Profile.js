@@ -38,15 +38,16 @@ const Profile = () => {
 
     return (
         <div className='p-12' >
-            <div className=' h-screen bg-green-900 flex flex-col lg:flex-row gap-3 items-center content-center  justify-center p-10'>
+            <div className='h-auto bg-green-900 flex flex-col lg:flex-col gap-3 items-center content-center  justify-center p-10'>
                 <div className='h-80  bg-gray-100 text-black w-full flex flex-col  item-center content-center p-10 '>
                     <img className='rounded-full w-40 h-40 mx-auto' src={photoURL} alt="" />
                     <h2 className='text-green-200' >{displayName}</h2>
                 </div>
-                <div className='h-full bg-blue-100 w-full'>
+                <div className='h-auto bg-blue-100 w-full'>
 
 
-                    <h2>order history</h2>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 ">
                     {
                         bookedData.map(data=> <Profiledata
 
@@ -59,6 +60,7 @@ const Profile = () => {
                         
                         
                     }
+                  </div>
                     
 
 

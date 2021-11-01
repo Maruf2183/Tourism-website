@@ -1,10 +1,58 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import OrderedData from './OrderedData';
 
 const ManageOrder = () => {
+    const [bookings, setBookings] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/booking').then(data => setBookings(data.data));
+    }, []);
+    console.log(bookings);
+
+
+
+
+
+
+
+
+
+
+
+
+
     return (
-        <div>
-            <h3>this is manage order page</h3>
-        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 ">
+        {
+                bookings.map(data => <OrderedData
+                    
+
+                    key={data._id}
+                    data={data}
+                >
+                    
+                    
+                    </OrderedData>
+                    
+                
+                    )
+
+
+            
+            
+        }
+      </div>
+        
+
+
+      
+       
+
+
+
+
+
     );
 };
 

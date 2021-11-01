@@ -51,7 +51,7 @@ function App() {
             <Route path='/profile'>
               <Profile></Profile>
             </Route>
-            <Route path='manageorder'>
+            <Route path='/manageorder'>
               <ManageOrder></ManageOrder>
               </Route>
 
