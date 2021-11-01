@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 const Profiledata = ({ data }) => {
-    const { Name, serviceID, city, address, phone, status } = data;
+    const { Name, serviceID, city, address, phone, status,_id} = data;
 
 
     const url = `http://localhost:5000/services/${serviceID}`;
@@ -19,7 +19,15 @@ const Profiledata = ({ data }) => {
     console.log(destination);
 
 
-    const { image, tittle, price, type, highlights } = destination;
+    const { image, tittle, price, } = destination;
+    
+
+    const deleteURL=`http://localhost:5000/booking/${_id}`
+
+    const handleDelete = () => {
+        console.log('delete clicked');
+        axios.delete(deleteURL).then(data => console.log(data));
+    }
 
 
 
@@ -50,10 +58,10 @@ const Profiledata = ({ data }) => {
                     <p>{city}</p>
                     <p>{address}</p>
                     <p>{phone}</p>
-                    <span class="bg-blue-500  text-white font-bold py-2 px-8 rounded">
+                    <span className="bg-blue-500  text-white font-bold py-2 px-8 rounded">
                         {status}
                     </span>
-                    <button class="bg-red-500 hover:bg-red-700 mx-4 text-white font-bold py-2 px-8 rounded">
+                    <button onClick={handleDelete} className="bg-red-500 hover:bg-red-700 mx-4 text-white font-bold py-2 px-8 rounded">
                         Cencel
                     </button>
 

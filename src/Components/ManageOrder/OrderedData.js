@@ -1,7 +1,26 @@
+import axios from 'axios';
 import React from 'react';
 
 const OrderedData = ({ data }) => {
-    const {Name,address,phone,city,productId} = data;
+    const { Name, address, phone, city, productId,_id} = data;
+    
+   const deleteURL=`http://localhost:5000/booking/${_id}`
+
+    const handleDelete = () => {
+        console.log('delete clicked');
+        axios.delete(deleteURL).then(data => console.log(data));
+    }
+        
+    const curentdata = data;
+    curentdata.status = "Approved"
+    console.log(curentdata);
+
+    const handleApprove = () => {
+        console.log('approve clicked');
+        axios.put(deleteURL, curentdata).then(result => console.log(result)).catch(error => console.log(error));
+       
+    }
+        
 
 
 
@@ -22,10 +41,10 @@ const OrderedData = ({ data }) => {
                     <p>{address}</p>
                     <p>{phone}</p>
                    
-                    <button class="bg-blue-500 hover:bg-blue-700  text-white font-bold py-2 px-8 rounded">
-                        Accept
+                    <button onClick={handleApprove} className="bg-blue-500 hover:bg-blue-700  text-white font-bold py-2 px-8 rounded">
+                        Approve
                     </button>
-                    <button class="bg-red-500 hover:bg-red-700 mx-4 text-white font-bold py-2 px-8 rounded">
+                    <button onClick={handleDelete} className="bg-red-500 hover:bg-red-700 mx-4 text-white font-bold py-2 px-8 rounded">
                         Cencel
                     </button>
 
