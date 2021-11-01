@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 
 const OrderedData = ({ data }) => {
-    const { Name, address, phone, city, productId,_id} = data;
+    const { Name, address, phone, city, productId,_id,image} = data;
     
    const deleteURL=`https://quiet-hamlet-08225.herokuapp.com/booking/${_id}`
 
@@ -30,7 +30,7 @@ const OrderedData = ({ data }) => {
 
             <div className="w-full bg-blue-300 rounded sahdow-lg flex flex-col  lg:flex-row sm:flex-col items-center">
                 <div className="w-full lg:w-2/4  lg:h-80">
-                    <img className="object-center object-cover rounded  h-full w-full lg:h-full lg:w-full" src='' alt={`thi sis a card images`} />
+                    <img className="object-center object-cover rounded  h-full w-full lg:h-full lg:w-full" src={image} alt={`thi sis a card images`} />
 
                 </div>
                 <div className="text-left  text-xs  w-full p-4 h-full px-2 lg:w-2/4 lg:h-full overflow-hidden lg:text-sm bg-blue-300 lg:mx-4">

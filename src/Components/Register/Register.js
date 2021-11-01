@@ -31,6 +31,7 @@ const Register = () => {
     const onSubmit = data => {
         data.serviceID = id
         data.status = 'Pending'
+        data.image = image;
         
 
         axios.post('https://quiet-hamlet-08225.herokuapp.com/booking', data)
